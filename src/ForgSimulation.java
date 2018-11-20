@@ -35,15 +35,17 @@ public class ForgSimulation {
             forgIndex += hopLength;
             System.out.print(hopLength + " ");
 
-            if (forgIndex >=  this.goalDistance)
+            if (forgIndex >=  this.goalDistance) {
+                System.out.print("    Success Final Distance: " + forgIndex + "\n");
                 return true;
+            }
 
             if (forgIndex < 0) {
+                System.out.print("    Failed Reached Negative Distance\n");
                 return false;
-                System.out.print("    Failed Reached Negative Distance\n")
             }
         }
-
+        System.out.print("    Failed Final Distance: " + forgIndex + "\n");
         return false;
     }
 
